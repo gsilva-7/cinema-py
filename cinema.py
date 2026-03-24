@@ -31,14 +31,14 @@ while True:
             print("CPF inválido.")
             continue
 
-        estacionado = False
+        existente = False
 
         for a in assentos:
             if a is not None and a[0] == cpf:
-                estacionado = True
+                existente = True
                 break
-        if estacionado:
-            print("Veículo já estacionado.")
+        if existente:
+            print("CPF já existente no sistema.")
             continue
 
         livres = []
@@ -74,7 +74,7 @@ while True:
             if assentos[indice] is None:
                 print(f"Assento {indice}: LIVRE")
             else:
-                print(f"Assentos {assento}: ({assentos[assento][0]} - {assentos[assento][1]})")
+                print(f"Assentos {assento}: ({assentos[indice][0]} - {assentos[indice][1]})")
                 ocupados += 1
     
     else:
